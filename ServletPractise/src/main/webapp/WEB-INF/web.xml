@@ -10,19 +10,29 @@
     <servlet-class>com.ssergeev.WelcomeServlet</servlet-class>
   </servlet>
 
+  <servlet-mapping>
+    <servlet-name>WelcomeServlet</servlet-name>
+    <url-pattern>/welcome</url-pattern>
+  </servlet-mapping>
+
   <servlet>
     <servlet-name>ShopServlet</servlet-name>
     <servlet-class>com.ssergeev.ShopServlet</servlet-class>
   </servlet>
 
   <servlet-mapping>
-    <servlet-name>WelcomeServlet</servlet-name>
-    <url-pattern>/welcome-servlet</url-pattern>
+    <servlet-name>ShopServlet</servlet-name>
+    <url-pattern>/shop</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>CheckServlet</servlet-name>
+    <servlet-class>com.ssergeev.CheckServlet</servlet-class>
+  </servlet>
+
   <servlet-mapping>
-    <servlet-name>ShopServlet</servlet-name>
-    <url-pattern>/shop-servlet</url-pattern>
+    <servlet-name>CheckServlet</servlet-name>
+    <url-pattern>/check</url-pattern>
   </servlet-mapping>
 
 </web-app>
