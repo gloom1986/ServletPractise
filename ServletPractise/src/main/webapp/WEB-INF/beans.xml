@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="userService" class="com.ssergeev.services.impl.UserServiceImpl">
+        <constructor-arg ref="userRepository"/>
+    </bean>
+
+    <bean id="userRepository" class="com.ssergeev.repository.impl.UserRepositoryImpl">
+    </bean>
+
+    <bean id="itemService" class="com.ssergeev.services.impl.ItemServiceImpl">
+        <constructor-arg ref="itemRepository"/>
+    </bean>
+
+    <bean id="itemRepository" class="com.ssergeev.repository.impl.ItemRepositoryImpl">
+    </bean>
+
+    <bean id="orderService" class="com.ssergeev.services.impl.OrderServiceImpl">
+        <constructor-arg ref="orderRepository"/>
+    </bean>
+
+    <bean id="orderRepository" class="com.ssergeev.repository.impl.OrderRepositoryImpl">
+    </bean>
+
+    <bean id="orderItemService" class="com.ssergeev.services.impl.OrderItemServiceImpl">
+        <constructor-arg ref="orderItemRepository"/>
+    </bean>
+
+    <bean id="orderItemRepository" class="com.ssergeev.repository.impl.OrderItemRepositoryImpl">
+    </bean>
+
+</beans>
