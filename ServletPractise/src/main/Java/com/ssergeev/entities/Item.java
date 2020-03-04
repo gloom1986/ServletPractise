@@ -1,21 +1,31 @@
 package com.ssergeev.entities;
 
+import javax.persistence.*;
+
+@Table(name = "Items")
+@Entity
 public class Item {
 
-    private int id;
-    private String itemName;
-    private double itemPrice;
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Integer id;
 
-    public int getId() {return id;}
-    public void setId(int id) {this.id = id;}
+    @Column(name = "name")
+    private String itemName;
+
+    @Column(name = "price")
+    private Double itemPrice;
+
+    public Integer getId() {return id;}
+    public void setId(Integer id) {this.id = id;}
 
     public String getItemName() {return itemName;}
     public void setItemName(String itemName) {this.itemName = itemName;}
 
-    public double getItemPrice() {
+    public Double getItemPrice() {
         return itemPrice;
     }
-    public void setItemPrice(int itemPrice) {
+    public void setItemPrice(Double itemPrice) {
         this.itemPrice = itemPrice;
     }
 

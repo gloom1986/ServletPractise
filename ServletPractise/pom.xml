@@ -63,13 +63,19 @@
          <version>5.4.12.Final</version>
      </dependency>
 
-<!--      &lt;!&ndash; https://mvnrepository.com/artifact/org.hibernate/hibernate-annotations &ndash;&gt;
+<!--      &lt;!&ndash; https://mvnrepository.com/artifact/org.springframework/spring-jdbc &ndash;&gt;
       <dependency>
-          <groupId>org.hibernate</groupId>
-          <artifactId>hibernate-annotations</artifactId>
-          <version>3.5.6-Final</version>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-jdbc</artifactId>
+          <version>5.2.3.RELEASE</version>
       </dependency>-->
 
+      <!-- https://mvnrepository.com/artifact/org.springframework/spring-orm -->
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-orm</artifactId>
+          <version>5.2.3.RELEASE</version>
+      </dependency>
 
 
   </dependencies>

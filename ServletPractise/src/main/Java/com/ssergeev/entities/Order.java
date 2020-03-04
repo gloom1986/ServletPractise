@@ -1,19 +1,34 @@
 package com.ssergeev.entities;
 
+import javax.persistence.*;
 import java.util.List;
 
+@Table(name = "Orders")
+@Entity
 public class Order {
 
-    private int id;
-    private double totalPrice;
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Integer id;
+
+    @Column
+    private Double totalPrice;
+
+    @ManyToOne(cascade = CascadeType.ALL)
     private User user;
+
+    @ManyToMany (cascade = CascadeType.ALL)
+    @JoinTable(name = "order_item",
+            joinColumns = @JoinColumn(name = "order_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "item_id", referencedColumnName = "id"))
     private List<Item> items;
 
-    public int getId() {return id;}
-    public void setId(int id) {this.id = id;}
 
-    public double getTotalPrice() {return totalPrice;}
-    public void setTotalPrice(double totalPrice) {this.totalPrice = totalPrice;}
+    public Integer getId() {return id;}
+    public void setId(Integer id) {this.id = id;}
+
+    public Double getTotalPrice() {return totalPrice;}
+    public void setTotalPrice(Double totalPrice) {this.totalPrice = totalPrice;}
 
     public User getUser() {return user;}
     public void setUser(User user) {this.user = user;}
