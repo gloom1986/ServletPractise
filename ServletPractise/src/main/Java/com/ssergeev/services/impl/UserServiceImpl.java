@@ -22,17 +22,21 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User getUserByName(String userName){
-        return userRepository.getUserByName(userName).orElseThrow(RuntimeException::new);
+    public User getUserByLogin(String login){
+        return userRepository
+                .getUserByLogin(login)
+                .orElseThrow(RuntimeException::new);
     }
 
     @Override
-    public void setUser(String userName) {
-        userRepository.saveUser(userName);
+    public void saveUser(User user) {
+        userRepository.saveUser(user);
     }
 
     @Override
-    public boolean isUserNameExist(String userName) {
-        return userRepository.getUserByName(userName).isPresent();
+    public boolean isLoginExist(String login) {
+        return userRepository
+                .getUserByLogin(login)
+                .isPresent();
     }
 }

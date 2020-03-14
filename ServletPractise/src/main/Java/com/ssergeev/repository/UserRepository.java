@@ -9,7 +9,7 @@ public interface UserRepository {
 
     List<User> getAllUsers();
 
-    Optional<User> getUserByName(String userName);
+    Optional<User> getUserByLogin(String login);
 
-    void saveUser(String userName);
+    void saveUser(User user);
 }

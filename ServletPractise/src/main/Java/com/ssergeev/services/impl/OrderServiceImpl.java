@@ -1,6 +1,7 @@
 package com.ssergeev.services.impl;
 
 import com.ssergeev.entities.Order;
+import com.ssergeev.entities.User;
 import com.ssergeev.repository.OrderRepository;
 import com.ssergeev.services.OrderService;
 import org.springframework.stereotype.Service;
@@ -22,23 +23,22 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public List<Order> getOrdersByUserId(int userId) {
-        return orderRepository.getOrdersByUserId(userId);
+    public List<Order> getUserOrders(User user) {
+        return orderRepository.getUserOrders(user);
     }
 
     @Override
-    public int saveOrder(int userId, double totalPrice) {
-        orderRepository.saveOrder(userId, totalPrice);
-        return userId;
+    public void saveOrder(Order order) {
+        orderRepository.saveOrder(order);
     }
 
-    @Override
-    public Order getLastUserOrderByUserId(int userId) {
-        return orderRepository.getLastUserOrderByUserId(userId).orElseThrow(RuntimeException::new);
-    }
+/*    @Override
+    public Order getLastUserOrderByUserId(User user) {
+        return orderRepository.getLastUserOrder(user).orElseThrow(RuntimeException::new);
+    }*/
 
-    @Override
+/*    @Override
     public boolean isUserOrderExist(int userId){
         return orderRepository.getLastUserOrderByUserId(userId).isPresent();
-    }
+    }*/
 }

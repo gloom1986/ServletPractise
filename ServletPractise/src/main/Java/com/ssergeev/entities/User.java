@@ -12,7 +12,7 @@ public class User {
     private Integer id;
 
     @Column (name = "name", unique = true)
-    private String userName;
+    private String login;
 
     @Column
     private String password;
@@ -24,8 +24,8 @@ public class User {
     public Integer getId() {return id;}
     public void setId(Integer id) {this.id = id;}
 
-    public String getUserName() {return userName;}
-    public void setUserName(String userName) {this.userName = userName;}
+    public String getLogin() {return login;}
+    public void setLogin(String login) {this.login = login;}
 
     public String getPassword() { return password; }
     public void setPassword(String password) { this.password = password; }
@@ -33,9 +33,9 @@ public class User {
     public List<Order> getUserOrderList() {return userOrderList;}
     public void setUserOrderList(List<Order> userOrderList) {this.userOrderList = userOrderList;}
 
-    public User(int id, String userName) {
-        this.id = id;
-        this.userName = userName;
+    public User(String login, String password) {
+        this.login = login;
+        this.password = password;
     }
 
     public User() {
@@ -43,6 +43,6 @@ public class User {
 
     @Override
     public String toString() {
-        return userName + " " + password;
+        return login + " " + password;
     }
 }

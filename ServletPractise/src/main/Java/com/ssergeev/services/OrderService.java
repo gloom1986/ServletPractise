@@ -1,6 +1,7 @@
 package com.ssergeev.services;
 
 import com.ssergeev.entities.Order;
+import com.ssergeev.entities.User;
 
 import java.util.List;
 
@@ -8,11 +9,11 @@ public interface OrderService {
 
     List<Order> getAllOrders();
 
-    List<Order> getOrdersByUserId(int userId);
+    List<Order> getUserOrders(User user);
 
-    int saveOrder(int userId, double totalPrice);
+    void saveOrder(Order order);
 
-    Order getLastUserOrderByUserId(int userId);
+//    Order getLastUserOrderByUserId(User user);
 
-    boolean isUserOrderExist(int userId);
+//    boolean isUserOrderExist(int userId);
 }

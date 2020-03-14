@@ -8,10 +8,10 @@ public interface UserService {
 
     List<User> getAllUsers();
 
-    boolean isUserNameExist(String userName);
+    void saveUser(User user);
 
-    User getUserByName(String userName);
+    boolean isLoginExist(String login);
 
-    void setUser(String userName);
+    User getUserByLogin(String login);
 
 }

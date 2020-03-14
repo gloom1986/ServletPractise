@@ -3,9 +3,7 @@ package com.ssergeev.servlet;
 import com.ssergeev.entities.Item;
 import com.ssergeev.entities.Order;
 import com.ssergeev.entities.User;
-import com.ssergeev.services.OrderItemService;
 import com.ssergeev.services.OrderService;
-import com.ssergeev.services.impl.OrderItemServiceImpl;
 import com.ssergeev.services.impl.OrderServiceImpl;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
@@ -23,15 +21,13 @@ import java.util.List;
 public class OrderServlet extends HttpServlet {
 
     private OrderService orderService;
-    private OrderItemService orderItemService;
     private List<Item> cart;
 
     @Override
-    public void init() throws ServletException {
+    public void init() {
         WebApplicationContext applicationContext = WebApplicationContextUtils.getWebApplicationContext(getServletContext());
         if (applicationContext != null) {
             orderService = applicationContext.getBean(OrderServiceImpl.class);
-            orderItemService = applicationContext.getBean(OrderItemServiceImpl.class);
         }
     }
 

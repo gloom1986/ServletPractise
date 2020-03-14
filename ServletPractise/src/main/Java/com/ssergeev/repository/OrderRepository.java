@@ -1,17 +1,17 @@
 package com.ssergeev.repository;
 
 import com.ssergeev.entities.Order;
+import com.ssergeev.entities.User;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface OrderRepository {
 
     List<Order> getAllOrders();
 
-    List<Order> getOrdersByUserId(int userId);
+    List<Order> getUserOrders(User user);
 
-    int saveOrder(int userId, double totalPrice);
+    void saveOrder(Order order);
 
-    Optional<Order> getLastUserOrderByUserId(int userId);
+    /*Optional<Order> getLastUserOrder(User user);*/
 }

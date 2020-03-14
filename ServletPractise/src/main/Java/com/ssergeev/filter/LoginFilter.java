@@ -41,10 +41,10 @@ public class LoginFilter extends HttpFilter {
             res.sendRedirect("");
         }
         if (session.getAttribute("user") == null) {
-            if (!userService.isUserNameExist(req.getParameter("userName"))) {
-                userService.setUser(req.getParameter("userName"));
+            if (!userService.isLoginExist(req.getParameter("userName"))) {
+                userService.saveUser(req.getParameter("userName"));
             }
-            User user = userService.getUserByName(req.getParameter("userName"));
+            User user = userService.getUserByLogin(req.getParameter("userName"));
             session.setAttribute("user", user);
             chain.doFilter(req, res);
         } else {
